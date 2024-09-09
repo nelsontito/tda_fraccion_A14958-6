@@ -5,7 +5,7 @@ public class main{
 
     static int generarNumeroAleatorio(int extremoInferior, int extremoSuperior){
 
-        return random.nextInt((extremoSuperior - extremoInferior));
+        return random.nextInt((extremoSuperior - extremoInferior)); 
     }
 
     public static void main(String[] args) {
