@@ -1,42 +1,74 @@
 public class fraccion implements Ifraccion{
 
-    public static int main(String[] args) {
-        int num=0;
-        int den=0;
-        private int suma;
-        private int resta;
-        private int multiplicar;
-        private int dividir;
-
-
+        private int num;
+        private int den;
         
+    
+        public fraccion(int num, int den) {
+            this.num = num;
+            this.den = den;
+        }
 
-        public static void sumar(int num, int den){
 
-            int sumar = ((num/den) + (num/den));
-            return.suma;
+        public fraccion() {
+            num = den= 0;
         }
-    
-        public static void restar(int num, int den){
-    
-            int restar = ((num/den) - (num/den));
-            return.resta;
+
+
+        public int getNum() {
+            return num;
         }
-    
-        public static void multiplicar(int num, int den){
-    
-            int multiplicar = ((num/den) * (num/den));
-            return.multiplicar;
+
+
+        public void setNum(int num) {
+            this.num = num;
         }
-    
-        public static void dividir(int num, int den){
-    
-            int dividir = ((num/den) * (den/num));
-            return.dividir;
+
+
+        public int getDen() {
+            return den;
         }
-    
-    
-        
+
+
+        public void setDen(int den) {
+            this.den = den;
         }
-    } 
+
+    @Override
+    public String toString(){
+        return "[" + num + "/" + den +"]";
+    }
+
+    @Override
+
+    public fraccion suma (fraccion fraccion1, fraccion fraccion2){
+        return new fraccion(
+            (fraccion1.getNum() + fraccion2.getNum()),
+            (fraccion1.getDen() + fraccion2.getDen()));
+    }
+
+    @Override
+
+    public fraccion resta (fraccion fraccion1, fraccion fraccion2){
+        return new fraccion(
+            (fraccion1.getNum() - fraccion2.getNum()),
+            (fraccion1.getDen() - fraccion2.getDen()));
+    }
+
+    @Override
+
+    public fraccion multiplicacion (fraccion fraccion1, fraccion fraccion2){
+        return new fraccion(
+            (fraccion1.getNum() * fraccion2.getNum()),
+            (fraccion1.getDen() * fraccion2.getDen()));
+    }
+
+
+    @Override
+
+    public fraccion division (fraccion fraccion1, fraccion fraccion2){
+        return new fraccion(
+            (fraccion1.getNum() / fraccion2.getNum()),
+            (fraccion1.getDen() / fraccion2.getDen()));
+    }
 }
